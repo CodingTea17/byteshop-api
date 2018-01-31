@@ -4,6 +4,7 @@ class Category < ApplicationRecord
   before_save :format_name
 
   validates_presence_of :name, :lx, :rx, :ty, :by, :store_id
+  validates :name, length: { in: 2..20 }
 
   private
 

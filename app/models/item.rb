@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   before_save :format_name
 
   validates_presence_of :name, :x, :y, :store_id, :category_id
+  validates :name, length: { in: 2..20 }
 
   private
 

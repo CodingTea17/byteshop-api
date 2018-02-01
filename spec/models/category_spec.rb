@@ -12,6 +12,7 @@ describe Category, 'validations' do
   it { should validate_presence_of :ty }
   it { should validate_presence_of :by }
   it { should validate_presence_of :store_id }
+  it { should validate_length_of(:name).is_at_least(2).is_at_most(20) }
 end
 
 describe Category, 'callbacks' do

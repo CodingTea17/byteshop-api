@@ -3,7 +3,7 @@ class ListItem < ApplicationRecord
   belongs_to :item
 
   validates_presence_of :name
-
+  validates :name, length: { in: 2..20 }
   validates :list_id, presence: true, numericality: { only_integer: true }
   validates :item_id, presence: true, numericality: { only_integer: true }
 

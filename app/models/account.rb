@@ -4,6 +4,7 @@ class Account < ApplicationRecord
   before_save :format_name
 
   validates_presence_of :name, :user_id
+  validates :name, length: { in: 2..20 }
 
   private
 

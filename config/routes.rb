@@ -8,7 +8,7 @@ Rails.application.routes.draw do
                                 controllers: {
                                   registrations:  'api/registrations'
                                 },
-                                skip: %i[sessions]
+                                skip: %i[]
 
     resources :accounts, except: %i[index create destroy] do
       resources :lists, except: [:update] do

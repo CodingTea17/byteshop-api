@@ -1,9 +1,10 @@
 class API::StoresController < ApplicationController
   include Response
+  before_action :authenticate_api_user!
 
   def index
     @stores = Store.all
-    @stores.length > 0 ? json_response(@stores) : (head :not_found)
+    !@stores.empty? ? json_response(@stores) : (head :not_found)
   end
 
   def show

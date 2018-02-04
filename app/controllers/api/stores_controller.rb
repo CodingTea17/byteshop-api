@@ -4,7 +4,7 @@ class API::StoresController < ApplicationController
 
   def index
     @stores = Store.all
-    !@stores.empty? ? json_response(@stores) : (head :not_found)
+    @stores.length > 0 ? json_response(@stores) : (head :not_found)
   end
 
   def show
